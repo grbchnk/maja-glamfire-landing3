@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0px 100px;
+  display: flex;
+  align-items: center;
+  max-width: 1620px;
+}
+
+.header {
+  // background-color: #e1e1e1;
+  padding: 50px 0px;
+
+  &__logo {
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &__img {
+      height: 54px;
+    }
+    &__text {
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
+
+  &__line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: black;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  padding: 70px 0px;
+}
+
+.img {
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.hero-img {
+  max-width: 100%;
+  // min-width: 670px;
+}
+
+.button {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 70px;
+  border-radius: 15px;
+  font-size: 32px;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.button::after {
+  content: "👉";
+  font-size: 50px;
+  transform: rotateZ(220deg) translate(-50%, -50%);
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover::after {
+  right: -20px;
+  bottom: 10px;
+}
+
+.button:hover,
+.social-button:hover {
+  transform: translateY(-5px);
+}
+
+.social-button {
+  height: 60px;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.content {
+  max-width: 590px;
+
+  &__online {
+    display: inline-block;
+    background-color: #000;
+    border-radius: 100px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    user-select: none;
+
+    &__circle {
+      padding-right: 5px;
+      color: #0ce884;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 43px;
+    margin: 15px 0;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 18px;
+
+    &__tag {
+      display: flex;
+      gap: 5px;
+
+      &__img {
+        width: 17px;
+      }
+      &__text {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__desc {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 45px 0;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__offs {
+    font-weight: 800;
+    font-size: 22px;
+    margin: 20px;
+  }
+}
