@@ -45,11 +45,23 @@ body {
 }
 
 .wrapper {
+  width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 150px;
+  justify-content: space-between;
+  gap: 50px;
   padding: 70px 0px;
+}
+
+.onlyfans-back {
+  position: absolute;
+  max-height: 400px;
+  opacity: 0.05;
+  z-index: -1;
+  right: -100px;
+  bottom: 30%;
+  transform: translateY(50%);
 }
 
 .img {

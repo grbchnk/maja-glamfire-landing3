@@ -52,17 +52,30 @@ body {
 }
 
 .wrapper {
+  width: 100%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
   padding: 70px 0px;
+}
+
+.onlyfans-back {
+  position: absolute;
+  max-height: 400px;
+  opacity: 0.05;
+  z-index: -1;
+  right: -100px;
+  bottom: 30%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .img {
