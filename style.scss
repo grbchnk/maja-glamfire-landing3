@@ -6,20 +6,41 @@
   padding: 0;
 }
 
+.falling-emoji {
+  user-select: none;
+  position: fixed;
+  top: 0;
+  animation: fall 3s linear;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
 
 .container {
   margin: 0 auto;
-  padding: 0px 100px;
+  padding: 0px 200px;
   display: flex;
   align-items: center;
-  max-width: 1620px;
+  max-width: 1820px;
 }
 
 .header {
-  // background-color: #e1e1e1;
   padding: 50px 0px;
 
   &__logo {
@@ -50,8 +71,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 70px;
   padding: 70px 0px;
+}
+
+.faq-section {
+  background-color: rgba($color: #0092ff, $alpha: 0.05);
 }
 
 .onlyfans-back {
@@ -60,18 +85,31 @@ body {
   opacity: 0.05;
   z-index: -1;
   right: -100px;
-  bottom: 30%;
-  transform: translateY(50%);
+  bottom: 8%;
+  // transform: translateY(50%);
 }
 
 .img {
+  user-select: none;
   border-radius: 60px;
   overflow: hidden;
 }
 
-.hero-img {
+.video-wrapper {
+  border-radius: 60px;
+  overflow: hidden;
   max-width: 100%;
-  // min-width: 670px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  user-select: none;
+  max-width: 100%;
+  cursor: pointer;
 }
 
 .button {
@@ -83,36 +121,40 @@ body {
   font-size: 32px;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
-}
 
-.button::after {
-  content: "👉";
-  font-size: 50px;
-  transform: rotateZ(220deg) translate(-50%, -50%);
-  position: absolute;
-  right: -30px;
-  bottom: 0;
-  transition: all 0.1s ease-in-out;
-}
+  &::after {
+    content: "👉";
+    font-size: 50px;
+    transform: rotateZ(220deg) translate(-50%, -50%);
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    transition: all 0.1s ease-in-out;
+  }
 
-.button:hover::after {
-  right: -20px;
-  bottom: 10px;
-}
+  &:hover {
+    transform: translateY(-5px);
 
-.button:hover,
-.social-button:hover {
-  transform: translateY(-5px);
+    &::after {
+      right: -20px;
+      bottom: 10px;
+    }
+  }
 }
 
 .social-button {
   height: 60px;
   overflow: hidden;
   transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .content {
   max-width: 590px;
+  width: 100%;
 
   &__online {
     display: inline-block;
@@ -142,16 +184,26 @@ body {
 
     &__tag {
       display: flex;
+      align-items: center;
       gap: 5px;
 
       &__img {
         width: 17px;
       }
       &__text {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      &__smile {
+        font-size: 24px;
       }
     }
+  }
+
+  &__tags-smile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
   }
 
   &__desc {
@@ -162,6 +214,7 @@ body {
 
   &__buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
   }
 
@@ -169,5 +222,77 @@ body {
     font-weight: 800;
     font-size: 22px;
     margin: 20px;
+  }
+
+  &--faq {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 80px 0;
+  }
+
+  &__faq {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    &__desc {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+
+.photo-collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  position: relative;
+
+  &::after {
+    content: "😍";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 54px;
+  }
+
+  &__img {
+    max-width: 100%;
+    border-radius: 60px;
+  }
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  margin-top: 70px;
+  padding: 70px 0px;
+}
+
+@media (max-width: 1300px) {
+  .wrapper--wrap {
+    padding-top: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .img {
+    width: 600px;
+  }
+
+  .photo-collage {
+    grid-template-columns: 1fr;
+
+    &__img:last-child {
+      display: none;
+    }
   }
 }
