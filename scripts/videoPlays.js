@@ -1,13 +1,11 @@
 const videoWrap = document.querySelector(".video-wrapper")
 
-function playVideos(videoWrap) {
-  const videos = videoWrap.querySelectorAll("video")
+function playVideo(videoWrap) {
+  const video = videoWrap.querySelector("video")
 
-  if (!videos?.length) return
+  if (!video) return
 
-  videos.forEach((item) => {
-    item.play()
-  })
+  video.play()
 }
 
-playVideos(videoWrap)
+playVideo(videoWrap)
