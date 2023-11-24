@@ -18,4 +18,6 @@ function apply3DEffect(imgId) {
   })
 }
 
-apply3DEffect("effect")
+if (window.innerWidth > 1000) {
+  apply3DEffect("effect")
+}
