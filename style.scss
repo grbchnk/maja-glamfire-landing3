@@ -7,6 +7,7 @@
 }
 
 .falling-emoji {
+  z-index: 100;
   user-select: none;
   position: fixed;
   top: 0;
@@ -375,6 +376,7 @@ footer {
     justify-content: center;
 
     &__online {
+      z-index: 100;
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
