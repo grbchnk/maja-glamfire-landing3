@@ -107,7 +107,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 70px;
-  padding: 70px 0px;
+  padding: 50px 0px;
 }
 
 .faq-section {
