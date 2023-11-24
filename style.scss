@@ -91,12 +91,12 @@ body {
 
 .img {
   user-select: none;
-  border-radius: 60px;
+  border-radius: min(3.5vw, 60px);
   overflow: hidden;
 }
 
 .video-wrapper {
-  border-radius: 60px;
+  border-radius: min(3.5vw, 60px);
   overflow: hidden;
   max-width: 100%;
 }
@@ -265,7 +265,7 @@ body {
 
   &__img {
     max-width: 100%;
-    border-radius: 60px;
+    border-radius: min(3.5vw, 60px);
   }
 }
 
@@ -291,8 +291,181 @@ footer {
   .photo-collage {
     grid-template-columns: 1fr;
 
+    &::after {
+      content: "";
+    }
+
     &__img:last-child {
       display: none;
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0px 0px;
+  }
+
+  .header {
+    padding: 30px 20px;
+
+    &__logo {
+      padding-right: 10px;
+      gap: 10px;
+
+      &__img {
+        height: 32px;
+      }
+      &__text {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 20px;
+
+    &--wrap {
+      padding: 0px 20px 20px;
+      gap: 10px;
+    }
+
+    &--reverse {
+      display: flex;
+      gap: 0px;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .onlyfans-back {
+    display: none;
+  }
+
+  .img {
+    border-radius: 30px;
+    max-width: 80%;
+  }
+
+  .video-wrapper {
+    border-radius: 30px;
+  }
+
+  .button {
+    margin: 0 auto;
+    font-size: 24px;
+  }
+
+  .social-button {
+    height: 60px;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__online {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: -16px;
+      border: 3px solid #fff;
+    }
+
+    &__title {
+      text-align: center;
+      font-size: 32px;
+      margin: 15px 0;
+    }
+
+    &__tags {
+      justify-content: center;
+      gap: 10px;
+
+      &__tag {
+        gap: 5px;
+
+        &__img {
+          width: 14px;
+        }
+        &__text {
+          font-size: 14px;
+        }
+        &__smile {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__tags-smile {
+      grid-gap: 5px;
+    }
+
+    &__desc {
+      font-size: 18px;
+      margin: 15px 0px 25px;
+    }
+
+    &__buttons {
+      justify-content: center;
+      gap: 20px;
+    }
+
+    &__offs {
+      text-align: center;
+      font-size: 16px;
+    }
+
+    &--faq {
+      gap: 25px;
+      margin: 25px 0 35px;
+    }
+
+    &__faq {
+      gap: 5px;
+
+      &__title {
+        font-size: 18px;
+      }
+
+      &__desc {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .photo-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    position: relative;
+
+    &__img:last-child {
+      display: block;
+    }
+
+    &::after {
+      content: "😍";
+      font-size: 48px;
+    }
+
+    &__img {
+      border-radius: 30px;
+    }
+  }
+
+  footer {
+    margin-top: 30px;
+    padding: 50px 0px;
   }
 }
