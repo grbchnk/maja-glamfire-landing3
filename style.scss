@@ -34,28 +34,29 @@ body {
 }
 
 .container {
+  box-sizing: content-box;
   margin: 0 auto;
-  padding: 0px 200px;
+  padding: 0px 150px;
   display: flex;
   align-items: center;
-  max-width: 1820px;
+  max-width: 1130px;
 }
 
 .header {
-  padding: 50px 0px;
+  padding: 40px 0px;
 
   &__logo {
-    padding-right: 15px;
+    padding-right: 10px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 
     &__img {
-      height: 54px;
+      height: 42px;
     }
     &__text {
       font-weight: 500;
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 
@@ -72,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 70px;
+  gap: 50px;
   padding: 50px 0px;
 }
 
@@ -82,15 +83,15 @@ body {
 
 .onlyfans-back {
   position: absolute;
-  max-height: 400px;
+  max-height: 350px;
   opacity: 0.05;
   z-index: -1;
   right: -100px;
   bottom: 8%;
-  // transform: translateY(50%);
 }
 
 .img {
+  max-width: 550px;
   user-select: none;
   border-radius: min(3.5vw, 60px);
   overflow: hidden;
@@ -115,12 +116,14 @@ body {
 }
 
 .button {
+  display: flex;
+  align-items: center;
   position: relative;
   background-color: #000;
   color: #fff;
-  padding: 10px 70px;
+  padding: 7px 55px;
   border-radius: 15px;
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
 
@@ -129,8 +132,8 @@ body {
     font-size: 50px;
     transform: rotateZ(220deg) translate(-50%, -50%);
     position: absolute;
-    right: -30px;
-    bottom: 0;
+    right: -25px;
+    bottom: 5px;
     transition: all 0.1s ease-in-out;
   }
 
@@ -138,16 +141,20 @@ body {
     transform: translateY(-5px);
 
     &::after {
-      right: -20px;
-      bottom: 10px;
+      right: -15px;
+      bottom: 15px;
     }
   }
 }
 
 .social-button {
-  height: 60px;
+  max-height: 48px;
   overflow: hidden;
   transition: all 0.1s ease-in-out;
+
+  &__img {
+    max-height: 48px;
+  }
 
   &:hover {
     transform: translateY(-5px);
@@ -155,34 +162,34 @@ body {
 }
 
 .content {
-  max-width: 590px;
+  max-width: 480px;
   width: 100%;
 
   &__online {
     display: inline-block;
     background-color: #000;
     border-radius: 100px;
-    padding: 5px 10px;
+    padding: 3px 8px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
     user-select: none;
 
     &__circle {
-      padding-right: 5px;
+      padding-right: 3px;
       color: #0ce884;
     }
   }
 
   &__title {
     font-weight: 700;
-    font-size: 43px;
-    margin: 15px 0;
+    font-size: 32px;
+    margin: 10px 0;
   }
 
   &__tags {
     display: flex;
-    gap: 18px;
+    gap: 15px;
 
     &__tag {
       display: flex;
@@ -190,14 +197,14 @@ body {
       gap: 5px;
 
       &__img {
-        width: 17px;
+        width: 14px;
       }
       &__text {
-        font-size: 18px;
+        font-size: 12px;
         font-weight: 600;
       }
       &__smile {
-        font-size: 24px;
+        font-size: 20px;
       }
     }
   }
@@ -205,46 +212,49 @@ body {
   &__tags-smile {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 
   &__desc {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
-    margin: 45px 0;
+    margin: 30px 0;
   }
 
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
   }
 
   &__offs {
     font-weight: 800;
-    font-size: 22px;
+    font-size: 18px;
     margin: 20px;
   }
 
   &--faq {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    margin: 80px 0;
+    gap: 50px;
+  }
+
+  &--faqq {
+    margin: 50px 0;
   }
 
   &__faq {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 
     &__title {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 700;
     }
 
     &__desc {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
     }
   }
@@ -253,7 +263,7 @@ body {
 .photo-collage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px;
+  grid-gap: 30px;
   position: relative;
 
   &::after {
@@ -262,10 +272,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 54px;
+    font-size: 48px;
   }
 
   &__img {
+    width: 262px;
     max-width: 100%;
     border-radius: min(3.5vw, 60px);
   }
@@ -275,35 +286,31 @@ footer {
   background-color: #000;
   color: #fff;
   text-align: center;
-  margin-top: 70px;
-  padding: 70px 0px;
+  margin-top: 50px;
+  padding: 50px 0px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1000px) {
   .wrapper--wrap {
     padding-top: 0px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .img {
-    width: 600px;
-  }
-
   .photo-collage {
     grid-template-columns: 1fr;
-
-    &::after {
-      content: "";
-    }
 
     &__img:last-child {
       display: none;
     }
+
+    &::after {
+      content: "";
+    }
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .container {
     padding: 0px 0px;
   }
@@ -312,14 +319,8 @@ footer {
     padding: 30px 20px;
 
     &__logo {
-      padding-right: 10px;
-      gap: 10px;
-
       &__img {
         height: 32px;
-      }
-      &__text {
-        font-size: 18px;
       }
     }
   }
@@ -348,7 +349,7 @@ footer {
 
   .img {
     border-radius: 30px;
-    max-width: 80%;
+    max-width: min(80%, 550px);
   }
 
   .video-wrapper {
@@ -358,10 +359,10 @@ footer {
   .button {
     margin: 0 auto;
     font-size: 24px;
+    height: 48px;
   }
 
   .social-button {
-    height: 60px;
     overflow: hidden;
     transition: all 0.1s ease-in-out;
 
@@ -387,7 +388,6 @@ footer {
 
     &__title {
       text-align: center;
-      font-size: 32px;
       margin: 15px 0;
     }
 
@@ -396,26 +396,13 @@ footer {
       gap: 10px;
 
       &__tag {
-        gap: 5px;
-
-        &__img {
-          width: 14px;
-        }
-        &__text {
-          font-size: 14px;
-        }
         &__smile {
           font-size: 18px;
         }
       }
     }
 
-    &__tags-smile {
-      grid-gap: 5px;
-    }
-
     &__desc {
-      font-size: 18px;
       margin: 15px 0px 25px;
     }
 
@@ -431,19 +418,10 @@ footer {
 
     &--faq {
       gap: 25px;
-      margin: 25px 0 35px;
     }
 
-    &__faq {
-      gap: 5px;
-
-      &__title {
-        font-size: 18px;
-      }
-
-      &__desc {
-        font-size: 16px;
-      }
+    &--faqq {
+      margin: 30px 0 35px;
     }
   }
 
@@ -459,7 +437,6 @@ footer {
 
     &::after {
       content: "😍";
-      font-size: 48px;
     }
 
     &__img {
